@@ -1,0 +1,176 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Credit Card Fraud Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c38b7b2457.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.ico')}}" type="image/x-icon">
+</head>
+<style>
+    *,
+    *::after,
+    *::after {
+        font-family: 'Poppins', sans-serif;
+    }
+    .socialicons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .socialicons li {
+        list-style-type: none;
+    }
+    .fa-brands,
+    .fa-sharp {
+        padding: 30px;
+        font-size: 20px;
+        width: 60px;
+        text-align: center;
+        text-decoration: none;
+        margin: 8px 5px;
+
+    }
+
+    .fa-brands:hover,
+    .fa-sharp:hover {
+        transform: scale(1.3) rotate(-10deg);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .fa-facebook-f {
+        background: #3B5998;
+        color: white;
+    }
+
+    .fa-envelope {
+        background: #55ACEE;
+        color: white;
+    }
+
+    .fa-github {
+        background: purple;
+        color: white;
+    }
+
+    .fa-instagram {
+        background: #125688;
+        color: white;
+    }
+
+    .fa-yahoo {
+        background: #430297;
+        color: white;
+    }
+</style>
+
+<body>
+
+
+    <button id="goToTopBtn">&#8593; Go to top</button>
+    <nav>
+        <div class="navbar">
+            <img src="static/credit-card.png" alt="Logo image" class="logo">
+            <div class="links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="{{url_for('upload_file')}}">Upload File</a></li>
+                    <li><a href="/admin">Administration</a></li>
+                    <button type="log-out" class="upperButton log-out"><a href="/">Log Out</a></button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flashes">
+        {% for message in messages %}
+        <span>{{message}}</span>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <!-- Header for index  -->
+    <div id="home">
+        <div class="text">
+            <h3>Credit Card Fraud Detection <br> using Machine Learning</h3>
+            <p>A Great Tool to Detect <br>
+                Credit Card Fruads using machine learning
+                model with 99% accuracy.
+            </p>
+            <button class="upperButton"><a href="#services">Check Out</a></button>
+        </div>
+    </div>
+    <!-- This will be the testing form for the Diabetes -->
+    <div id="services">
+        <h2 class="h2ser">Our Services</h2>
+        <div class="card">
+            <div class="card1">
+                <img src="/static/analysis.png" alt="">
+                <h2>Analysis</h2>
+                <p>Our project offers assistance by carefully examining the uploaded data.
+                    The analysis is handled by Streamlit, a highly well-liked tool for data analysis and web rendering.
+                    The Streamlit is combined with the flask to achieve the finest outcomes.
+                </p>
+            </div>
+            <div class="card2">
+                <img src="/static/prediction.png" alt="">
+                <h2>Prediction</h2>
+                <p>The K-Best automatic feature extraction is used by the browser during dynamic prediction to extract
+                    the best features. Logistic Regression, KNearest Classifier, and Decision Tree Classifier are the
+                    three models in use. As the basic model, we choose the model with the highest accuracy among these
+                    models.
+                </p>
+            </div>
+            <div class="card3">
+                <img src="/static/upload file.png" alt="">
+                <h2>Upload Data</h2>
+                <p>When the user wants to handle the data over the hooks and wants to run the model across several
+                    datafiles containing sensitive information, uploading a file is a privilege.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="documentation">
+        <h2>For more information regarding <br>
+            this project, Download the <br>
+            Documentation</h2>
+        <a href="/static/DOCUMENTATION.docx"><button class="button1">Download Here</button></a>
+        <p>Get in touch with us.</p>
+        <div class="socialicons">
+            <li><a href="https://www.facebook.com" class="fa-brands fa-facebook-f"></a></li>
+            <li><a href="https://www.instagram.com/its_akber_ali/" class="fa-brands fa-instagram"></a></li>
+            <li><a href="https://www.github.com/akbaralishaik" class="fa-brands fa-github"></a></li>
+            <li><a href="mailto:akbaralishaik06@gmail.com" class="fa-sharp fa-regular fa-envelope"></a></li>
+        </div>
+    </div>
+
+
+    <script>
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                document.getElementById("goToTopBtn").style.display = "block";
+            } else {
+                document.getElementById("goToTopBtn").style.display = "none";
+            }
+        }
+
+        document.getElementById("goToTopBtn").addEventListener("click", function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+
+    </script>
+
+</body>
+
+</html>

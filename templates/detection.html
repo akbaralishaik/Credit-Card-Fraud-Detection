@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/logo.ico" type="image/x-icon">
+    <title>Detection | CCF Detector</title>
+    <style>
+        body{
+            background: linear-gradient(rgba(0,0,0, 0.6),rgba(0,0,0,0.2)), url('/static/detectionbg.png');
+        }
+        #test h2{
+            margin-top: -2rem;
+            color: white;
+        }
+        #test{
+            background: inherit;
+        }
+    </style>
+</head>
+<body>
+     <!-- This will be the testing form for the Diabetes -->
+     <div id="test">
+        <h2>Detect Now!</h2>
+        <form action="/prediction" method="POST">
+            <div class="inputs">
+                {% for i in range(collen) %}
+                <div class="{{columns[i]}} Glucose">
+                    <input type="text" name="{{columns[i]}}" required>
+                    <span class="placeholder">{{columns[i]}}</span>
+                </div>
+            {% endfor %}
+                <button type="submit" class="button">Submit!!</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

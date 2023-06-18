@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="/static/logo.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <title>File Contents - {{ file_name }}</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body {
+            background: linear-gradient(to right, #414345, #232526);
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        table {
+            text-align: left;
+            border-collapse: collapse;
+            width: 50%;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            margin-left: 25%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        /* go to top button */
+        #goToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        #goToTopBtn:hover {
+            background-color: #555;
+        }
+
+        /* Back to admin button */
+        .back-button {
+            display: inline-block;
+            position: fixed;
+            left: 0;
+            padding: 10px 20px;
+            background: linear-gradient(to bottom, lightblue 0%, #f8f5f5 100%);
+            border-radius: 5px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+            color: black;
+            text-decoration: none;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .back-icon {
+            display: inline-block;
+            font-size: 1em;
+            margin-right: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .back-button:hover .back-icon {
+            display: none;
+        }
+
+        .back-text {
+            display: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .back-button:hover .back-text {
+            display: inline-block;
+        }
+
+        tr:hover {background-color: #f5f5f5;color: black;}
+    </style>
+</head>
+<body>
+    <button id="goToTopBtn">&#8593; Go to top</button>
+    <h1>File Contents - {{ file_name }}</h1>
+    <a href="/admin" class="back-button">
+        <span class="back-icon">&larr;</span>
+        <span class="back-text">Back to Admin</span>
+    </a>
+    {{ data|safe }}
+
+
+
+    <script>
+        window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+    if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+        document.getElementById("goToTopBtn").style.display = "block";
+    } else {
+        document.getElementById("goToTopBtn").style.display = "none";
+    }
+}
+
+document.getElementById("goToTopBtn").addEventListener("click", function () {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});
+    </script>
+</body>
+</html>

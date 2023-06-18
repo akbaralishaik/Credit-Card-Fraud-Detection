@@ -1,0 +1,87 @@
+body {
+    font-family: 'Roboto';
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: #232526;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #232526, #51b0f0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    display: block;
+    outline: none;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover{
+    background-color: #4caf4fc9;
+}
+.container {
+    display: flex;
+}
+
+.sec1 {
+
+    height: 100vh;
+    width: 50vw;
+    text-align: justify;
+    margin-top: 5em;
+    margin-left: 2em;
+    margin-right: 5em;
+}
+
+
+.sec1>.text>h2 {
+    text-align: center;
+    font-size: xx-large;
+    text-transform: uppercase;
+}
+
+.sec1>.text>p {
+    margin: 1em;
+    text-transform: capitalize;
+}
+
+.sec2 {
+    margin-top: 7%;
+    margin-left: 7%;
+}
+
+p>a {
+    color: #fff;
+    padding: .3em;
+    text-transform: uppercase;
+}
+
+p>a:hover {
+    text-decoration: none;
+}
+
+::selection {
+    background-color: #232526;
+}

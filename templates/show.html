@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Fraud Detection</title>
+    <script src="https://kit.fontawesome.com/c38b7b2457.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.ico')}}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/show.css">
+</head>
+
+<body>
+    <div class="header">
+        <!-- <div class="header">
+        
+        <div class="scroller">
+        </div>
+    </div> -->
+        <h2>Credit Card Fraud Detection:</h2>
+        <span class="result">Result: </span><span class="negative">{{str1}}</span>
+        <span class="positive">{{str2}}</span>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class=flashes>
+            {% for category, message in messages %}
+            <li class="lis {{ category }}">
+                {% if category == 'error' %}
+                <span class="fa fa-times-circle"></span>
+                {% elif category == 'warning' %}
+                <span class="fa fa-exclamation-triangle"></span>
+                {% elif category == 'success' %}
+                <span class="fa fa-check-circle"></span>
+                {% endif %}
+                {{ message }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+        <label for="table">Result Abridgement</label>
+        <div class="table">
+            <table>
+                <tr>
+                    <th>Features </th>
+                    <th>Input Values</th>
+                </tr>
+                {% for feature,input in inp.items() %}
+                <tr>
+                    <td>{{feature}}</td>
+                    <td>{{input}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+
+        </div>
+        <div class="buttons">
+            <button class="but"><a href="/admin">New Prediction</a></button>
+            <button class="but"><a href="/home">Home</a></button>
+        </div>
+        <div class="doc">
+            <p class="note">
+                Disclaimer: The outcomes displayed here are a result of Machine Learning model with 99% accuracy. <br>
+                The results may or may not be true.
+            </p>
+        </div>
+    </div>
+    <footer>
+        <div class="soico">
+            <p>Get in touch with us.</p>
+            <div class="socialicons">
+                <li><a href="https://www.facebook.com" class="fa-brands fa-facebook-f"></a></li>
+                <li><a href="https://www.instagram.com/its_akber_ali/" class="fa-brands fa-instagram"></a></li>
+                <li><a href="https://www.github.com/akbaralishaik" class="fa-brands fa-github"></a></li>
+                <li><a href="mailto:akbaralishaik06@gmail.com" class="fa-sharp fa-regular fa-envelope"></a></li>
+            </div>
+        </div>
+        <p class="footer">
+            Created By Shaik Akbar Ali, Mohammed Akber Ali and Sofiyan Ali | All copyrights &copy; reserved
+        </p>
+    </footer>
+</body>
+
+</html>

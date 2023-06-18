@@ -1,0 +1,93 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+.header{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('/static/UploadBG.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgb(255, 255, 255);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="file"] {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #8FC5E8;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, lightblue 0%, #f8f5f5 100%);
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    color: black;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .back-icon {
+    display: inline-block;
+    font-size: 1em;
+    margin-right: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .back-button:hover .back-icon {
+    display: none;
+  }
+  
+  .back-text {
+    display: none;
+  }
+  
+  .back-button:hover .back-text {
+    display: inline-block;
+  }
+  h2{
+    font-family: 'Poppins';
+    font-size: 2rem;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+  }
+  
