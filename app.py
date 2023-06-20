@@ -68,7 +68,6 @@ def prediction():
         inputs = arr.array('d', map(float, Input.values()))
 
         test = result[0].predict([inputs])
-        test = 1
         if (test == 0):
             inp = dict(zip(list(columns), list(inputs)))
             return render_template('show.html', str1='Not Fraudulent', inp =inp)
