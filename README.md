@@ -8,7 +8,7 @@ Another Synthetic dataset generated using AI is also present in the root directo
 
 Install all the dependencies using the command given below:
 
-`pip install -r requirements`
+`pip install -r requirements.txt`
 
 To run the code:
 
