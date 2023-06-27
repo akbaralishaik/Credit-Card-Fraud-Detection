@@ -61,6 +61,8 @@ def prediction():
     file = open('model.pkl', 'rb')
     result = pk.load(file)
     file.close()
+
+    columns = result[1]
     if request.method == 'POST':
         Input = request.form
         inputs = arr.array('d', map(float, Input.values()))
